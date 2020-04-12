@@ -1,5 +1,5 @@
 # python3
-
+from functools import lru_cache
 
 def last_digit_of_fibonacci_number_naive(n):
     assert 0 <= n <= 10 ** 7
@@ -14,38 +14,30 @@ def last_digit_of_fibonacci_number(n):
     assert 0 <= n <= 10 ** 7
 
     # type here
-    a = 0
-    b = 1
-    if n == 0:
+    def fibo(n):
+        a, b = 0, 1
+        for i in range(n):
+            a, b = b, (a + b) % 10
         return a
-    elif n == 1:
-        return b
-    else:
-        for i in range(1,n):
-            c = a + b
-            a = b
-            b = c
-        # return b
-        return int(str(b)[-1])
+
+    # def fibo(n, stored = { 0:0 , 1:1}):
+    #     if n not in stored:
+    #         stored[n] = fibo(n-1, stored) + fibo(n-2, stored)
+    #     return stored[n]
 
 
+    # @lru_cache(1000)
+    # def fibo(n):
+    #     if n == 0:
+    #         return 0
+    #     elif n == 1 or n ==2:
+    #         return 1
+    #     else:
+    #         return fibo(n-1) + fibo(n-2)
+    # return int(str(fibo(n))[-1])
+    return int(str(fibo(n))[-1])
+#
 
-    # a = [0, 1, 1]
-    # if n > 2:
-    #     for i in range(2, n):
-    #         # print(a)
-    #         a.append(a[i - 1] + a[i])
-    #         # del a[0]
-    #         # if n > 5:
-    #         #     del a[0]
-    #     # return a
-    #     return int(str(a[n]))
-    #     # return int(str(a[n])[-1])
-    #     # if i == n:
-    #     #     return a
-    # else:
-    #     return a[n]
-    #     # return str(a[n])
 
 
 if __name__ == '__main__':

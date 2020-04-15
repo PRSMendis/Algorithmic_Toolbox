@@ -14,9 +14,12 @@ def maximum_loot_value(capacity, weights, prices):
 
 
 if __name__ == "__main__":
-    data = list(map(int, stdin.read().split()))
-    n, input_capacity = data[0:2]
-    input_prices = data[2:(2 * n + 2):2]
-    input_weights = data[3:(2 * n + 2):2]
-    opt_value = maximum_loot_value(input_capacity, input_weights, input_prices)
+    # data = list(map(int, stdin.read().split()))
+    # n, input_capacity = data[0:2]
+    # input_prices = data[2:(2 * n + 2):2]
+    # input_weights = data[3:(2 * n + 2):2]
+    capacity, weights, prices = (50, [20, 50, 30], [60, 100, 120], 180.0)
+
+    # opt_value = maximum_loot_value(input_capacity, input_weights, input_prices)
+    opt_value = maximum_loot_value(capacity, weights, prices)
     print("{:.10f}".format(opt_value))

@@ -22,19 +22,25 @@ def compute_min_number_of_refills(d, m, stops):
         greatest_pos = position
         for i in range(0,len(stops)):
 
-            if fuel + position >= stops[i]:
+            if greatest_pos == d:
+                refills +=1
+                position = greatest_pos
+                break
+
+            elif fuel + position >= stops[i]:
                 if stops[i] > greatest_pos:
                     greatest_pos = stops[i]
                     print(greatest_pos)
+
             elif fuel + position < stops[i]:
                 refills += 1
                 position = greatest_pos
 
                 break
-            elif greatest_pos == d:
-                refills +=1
-                position = greatest_pos
-                break
+            # elif greatest_pos == d:
+            #     refills +=1
+            #     position = greatest_pos
+            #     break
     return refills
 
 

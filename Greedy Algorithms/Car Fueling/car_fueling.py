@@ -15,12 +15,13 @@ def compute_min_number_of_refills(d, m, stops):
     fuel = m
     refills = 0
     stops.append(d)
+    i = 0
 
     # While we have not reached the destination
     while position != d:
         # Find the greatest distance that we can travel, and go there and refill our fuel
         greatest_pos = position
-        for i in range(0,len(stops)):
+        while i < len(stops):
 
             if greatest_pos == d:
                 refills +=1
@@ -30,13 +31,20 @@ def compute_min_number_of_refills(d, m, stops):
             elif fuel + position >= stops[i]:
                 if stops[i] > greatest_pos:
                     greatest_pos = stops[i]
-                    print(greatest_pos)
+                    # print(greatest_pos)
+                    if greatest_pos == d:
+                        position = greatest_pos
+                        break
+
 
             elif fuel + position < stops[i]:
                 refills += 1
                 position = greatest_pos
-
                 break
+            i +=1
+
+
+
             # elif greatest_pos == d:
             #     refills +=1
             #     position = greatest_pos

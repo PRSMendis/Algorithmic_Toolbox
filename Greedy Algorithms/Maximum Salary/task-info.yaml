@@ -123,6 +123,9 @@ files:
         assert len(input_numbers) == n
         print(largest_number(input_numbers))
   learner_created: false
+- name: Maximum_Salary.ipynb
+  visible: true
+  learner_created: true
 feedback_link: https://www.coursera.org/learn/algorithmic-toolbox/programming/kAiGl/programming-assignment-2-greedy-algorithms/discussions
 status: Unchecked
 record: -1

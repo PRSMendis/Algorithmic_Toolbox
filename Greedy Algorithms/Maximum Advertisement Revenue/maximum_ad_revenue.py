@@ -26,7 +26,6 @@ def max_dot_product(first_sequence, second_sequence):
     assert all(0 <= f <= 10 ** 5 for f in first_sequence)
     assert all(0 <= s <= 10 ** 5 for s in second_sequence)
 
-    print("type here")
     def prod(iterable):
         return reduce(operator.mul, iterable, 1)
 
@@ -49,11 +48,11 @@ def max_dot_product(first_sequence, second_sequence):
 
 
 if __name__ == '__main__':
-    # n = int(input())
-    # prices = list(map(int, input().split()))
-    # clicks = list(map(int, input().split()))
-    # assert len(prices) == len(clicks) == n
+    n = int(input())
+    prices = list(map(int, input().split()))
+    clicks = list(map(int, input().split()))
+    assert len(prices) == len(clicks) == n
 
-    prices, clicks = [2,3,5], [10,20,30]
+    # prices, clicks = [2,3,5], [10,20,30]
     print(max_dot_product(prices, clicks))
     # print(prices)

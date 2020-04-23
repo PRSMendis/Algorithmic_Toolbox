@@ -63,12 +63,12 @@ def compute_min_number_of_refills(d, m, stops):
 
 
 if __name__ == '__main__':
-    # input_d = int(input())
-    # input_m = int(input())
-    # input_n = int(input())
-    # input_stops = list(map(int, input().split()))
-    # assert len(input_stops) == input_n
+    input_d = int(input())
+    input_m = int(input())
+    input_n = int(input())
+    input_stops = list(map(int, input().split()))
+    assert len(input_stops) == input_n
 
-    # print(compute_min_number_of_refills(input_d, input_m, input_stops))
-    (d, m, stops ) = (950, 400, [200, 375, 550, 750])
+    print(compute_min_number_of_refills(input_d, input_m, input_stops))
+    # (d, m, stops ) = (950, 400, [200, 375, 550, 750])
     print(compute_min_number_of_refills(d, m, stops))

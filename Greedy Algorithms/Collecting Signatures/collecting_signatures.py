@@ -65,25 +65,25 @@ def compute_optimal_points(segments):
         v.append(l)
         M, count = drow(M, v[k], count)
         k += 1
-    return k
+    return v
 
 
 
 
 
 if __name__ == '__main__':
-    # n, *data = map(int, stdin.read().split())
-    # input_segments = list(map(lambda x: Segment(x[0], x[1]), zip(data[::2], data[1::2])))
-    # assert n == len(input_segments)
+    n, *data = map(int, stdin.read().split())
+    input_segments = list(map(lambda x: Segment(x[0], x[1]), zip(data[::2], data[1::2])))
+    assert n == len(input_segments)
 
-    s = ([Segment(1, 3), Segment(2, 5), Segment(3, 6)])
-
-    output_points = compute_optimal_points(s)
-    # output_points = compute_optimal_points(input_segments)
-    print(output_points)
-
-
+    # s = ([Segment(1, 3), Segment(2, 5), Segment(3, 6)])
+    #
+    # output_points = compute_optimal_points(s)
+    output_points = compute_optimal_points(input_segments)
+    # print(output_points)
 
 
-    # print(len(output_points))
-    # print(*output_points)
+
+
+    print(len(output_points))
+    print(*output_points)

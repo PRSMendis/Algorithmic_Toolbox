@@ -31,7 +31,7 @@ files:
       length: 9
       offset: 501
     initialized_from_dependency: false
-    selected: false
+    selected: true
     status: Unchecked
   text: |
     import unittest
